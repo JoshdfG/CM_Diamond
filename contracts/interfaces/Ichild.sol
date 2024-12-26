@@ -16,7 +16,7 @@ interface ICHILD {
 
     function getOrganizationStatus() external view returns (bool);
 
-    function registerStudents(individual[] calldata _studentList) external;
+    function registerStudents(Individual[] calldata _studentList) external;
 
     function revoke(address[] calldata _individual) external;
 
@@ -28,7 +28,7 @@ interface ICHILD {
         address _student
     ) external view returns (string memory name);
 
-    function registerStaffs(individual[] calldata staffList) external;
+    function registerStaffs(Individual[] calldata staffList) external;
 
     function listMentors() external view returns (address[] memory);
 
@@ -48,9 +48,9 @@ interface ICHILD {
         bytes memory _lectureId
     ) external view returns (uint);
 
-    function editStudentName(individual[] memory _studentList) external;
+    function editStudentName(Individual[] memory _studentList) external;
 
-    function editMentorsName(individual[] memory _mentorsList) external;
+    function editMentorsName(Individual[] memory _mentorsList) external;
 
     function mentorHandover(address newMentor) external;
 

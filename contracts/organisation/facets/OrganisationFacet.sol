@@ -5,15 +5,16 @@ import "../../interfaces/INFT.sol";
 import "../../interfaces/IFactory.sol";
 import "../../libraries/Events.sol";
 import {LibOrganisation} from "../libraries/LibOrganisation.sol";
+import {IOrganisation} from "../interfaces/IOrganisation.sol";
 import "../../libraries/Error.sol";
 
 contract OrganisationFacet {
     function deploy(
-        string memory _organization,
-        string memory _cohort,
+        string calldata _organization,
+        string calldata _cohort,
         address _moderator,
-        string memory _adminName,
-        string memory _uri
+        string calldata _adminName,
+        string calldata _uri
     ) external {
         LibOrganisation.deploy(
             _organization,
@@ -36,15 +37,15 @@ contract OrganisationFacet {
         );
     }
 
-    function RequestNameCorrection() external {
-        LibOrganisation.RequestNameCorrection();
+    function requestNameCorrection() external {
+        LibOrganisation.requestNameCorrection();
     }
 
-    function editStudentName(individual[] memory _studentList) external {
+    function editStudentName(Individual[] calldata _studentList) external {
         LibOrganisation.editStudentName(_studentList);
     }
 
-    function editMentorsName(individual[] memory _mentorsList) external {
+    function editMentorsName(Individual[] calldata _mentorsList) external {
         LibOrganisation.editMentorsName(_mentorsList);
     }
 
@@ -84,11 +85,11 @@ contract OrganisationFacet {
         LibOrganisation.closeAttendance(_lectureId);
     }
 
-    function RecordResults(
+    function recordResults(
         uint256 testId,
         string calldata _resultCid
     ) external {
-        LibOrganisation.RecordResults(testId, _resultCid);
+        LibOrganisation.recordResults(testId, _resultCid);
     }
 
     function getResultCid() external view returns (string[] memory) {
@@ -97,8 +98,8 @@ contract OrganisationFacet {
         return org.resultCid;
     }
 
-    function EvictStudents(address[] calldata studentsToRevoke) external {
-        LibOrganisation.EvictStudents(studentsToRevoke);
+    function evictStudents(address[] calldata studentsToRevoke) external {
+        LibOrganisation.evictStudents(studentsToRevoke);
     }
 
     function removeMentor(address[] calldata rouge_mentors) external {
@@ -108,21 +109,21 @@ contract OrganisationFacet {
     function getNameArray(
         address[] calldata _students
     ) external view returns (string[] memory) {
-        LibOrganisation.getNameArray(_students);
+        return LibOrganisation.getNameArray(_students);
     }
 
-    function MintCertificate(string memory Uri) external {
-        LibOrganisation.MintCertificate(Uri);
+    function mintCertificate(string memory Uri) external {
+        LibOrganisation.mintCertificate(Uri);
     }
 
     //VIEW FUNCTION
-    function liststudents() external view returns (address[] memory) {
+    function listStudents() external view returns (address[] memory) {
         LibOrganisation.Organisation storage org = LibOrganisation.orgStorage();
 
         return org.students;
     }
 
-    function VerifyStudent(address _student) external view returns (bool) {
+    function verifyStudent(address _student) external view returns (bool) {
         LibOrganisation.Organisation storage org = LibOrganisation.orgStorage();
 
         return org.isStudent[_student];
@@ -140,7 +141,7 @@ contract OrganisationFacet {
     function getStudentAttendanceRatio(
         address _student
     ) external view returns (uint attendace, uint TotalClasses) {
-        LibOrganisation.getStudentAttendanceRatio(_student);
+        (attendace, TotalClasses) = LibOrganisation.getStudentAttendanceRatio(_student);
     }
 
     function getStudentsPresent(
@@ -154,9 +155,7 @@ contract OrganisationFacet {
     function listClassesAttended(
         address _student
     ) external view returns (bytes[] memory) {
-        LibOrganisation.Organisation storage org = LibOrganisation.orgStorage();
-
-        LibOrganisation.listClassesAttended(_student);
+        return LibOrganisation.listClassesAttended(_student);
     }
 
     function getLectureIds() external view returns (bytes[] memory) {
@@ -181,7 +180,7 @@ contract OrganisationFacet {
         return org.mentors;
     }
 
-    function VerifyMentor(address _mentor) external view returns (bool) {
+    function verifyMentor(address _mentor) external view returns (bool) {
         LibOrganisation.Organisation storage org = LibOrganisation.orgStorage();
 
         return org.isStaff[_mentor];

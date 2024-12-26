@@ -5,7 +5,7 @@ pragma solidity ^0.8.0;
 * Author: Nick Mudge <nick@perfectabstractions.com> (https://twitter.com/mudgen)
 * EIP-2535 Diamonds: https://eips.ethereum.org/EIPS/eip-2535
 /******************************************************************************/
-import {IDiamondCut} from "../interfaces/IDiamondCut.sol";
+import {IDiamondCut, FacetCut, FacetCutAction} from "../interfaces/IDiamondCut.sol";
 
 library LibDiamond {
     error InValidFacetCutAction();
@@ -82,14 +82,14 @@ library LibDiamond {
     }
 
     event DiamondCut(
-        IDiamondCut.FacetCut[] _diamondCut,
+        FacetCut[] _diamondCut,
         address _init,
         bytes _calldata
     );
 
     // Internal function version of diamondCut
     function diamondCut(
-        IDiamondCut.FacetCut[] memory _diamondCut,
+        FacetCut[] memory _diamondCut,
         address _init,
         bytes memory _calldata
     ) internal {
@@ -98,18 +98,18 @@ library LibDiamond {
             facetIndex < _diamondCut.length;
             facetIndex++
         ) {
-            IDiamondCut.FacetCutAction action = _diamondCut[facetIndex].action;
-            if (action == IDiamondCut.FacetCutAction.Add) {
+            FacetCutAction action = _diamondCut[facetIndex].action;
+            if (action == FacetCutAction.Add) {
                 addFunctions(
                     _diamondCut[facetIndex].facetAddress,
                     _diamondCut[facetIndex].functionSelectors
                 );
-            } else if (action == IDiamondCut.FacetCutAction.Replace) {
+            } else if (action == FacetCutAction.Replace) {
                 replaceFunctions(
                     _diamondCut[facetIndex].facetAddress,
                     _diamondCut[facetIndex].functionSelectors
                 );
-            } else if (action == IDiamondCut.FacetCutAction.Remove) {
+            } else if (action == FacetCutAction.Remove) {
                 removeFunctions(
                     _diamondCut[facetIndex].facetAddress,
                     _diamondCut[facetIndex].functionSelectors

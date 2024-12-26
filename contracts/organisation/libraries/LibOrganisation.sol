@@ -15,7 +15,7 @@ library LibOrganisation {
          */
         string organization;
         string cohort;
-        string certiificateURI;
+        string certificateURI;
         address organisationFactory;
         address NftContract;
         address certificateContract;
@@ -39,12 +39,12 @@ library LibOrganisation {
          * ============================================================ *
          */
         address[] students;
-        mapping(address => individual) studentsData;
+        mapping(address => Individual) studentsData;
         mapping(address => uint) indexInStudentsArray;
         mapping(address => uint) studentsTotalAttendance;
         mapping(address => bool) isStudent;
         mapping(address => bytes[]) classesAttended;
-        mapping(address => mapping(bytes => bool)) IndividualAttendanceRecord;
+        mapping(address => mapping(bytes => bool)) individualAttendanceRecord;
         string[] resultCid;
         mapping(uint256 => bool) testIdUsed;
         /**
@@ -58,7 +58,7 @@ library LibOrganisation {
         mapping(address => uint) indexInMentorsArray;
         mapping(address => bytes[]) moderatorsTopic;
         mapping(address => bool) isStaff;
-        mapping(address => individual) mentorsData;
+        mapping(address => Individual) mentorsData;
     }
 
     struct lectureData {
@@ -116,7 +116,6 @@ library LibOrganisation {
     }
 
     // organisation logic
-
     function deploy(
         string memory _organization,
         string memory _cohort,
@@ -153,7 +152,7 @@ library LibOrganisation {
         org.spokContract = _spokContract;
     }
 
-    function registerStaffs(individual[] calldata staffList) external {
+    function registerStaffs(Individual[] calldata staffList) external {
         Organisation storage org = orgStorage();
 
         onlyModerator();
@@ -183,7 +182,7 @@ library LibOrganisation {
         org.moderator = newModerator;
     }
 
-    function registerStudents(individual[] calldata _studentList) external {
+    function registerStudents(Individual[] calldata _studentList) external {
         Organisation storage org = orgStorage();
 
         onlyModerator();
@@ -205,7 +204,7 @@ library LibOrganisation {
         emit Events.studentsRegistered(_studentList.length);
     }
 
-    function RequestNameCorrection() external {
+    function requestNameCorrection() external {
         Organisation storage org = orgStorage();
 
         onlyStudentOrStaff();
@@ -215,7 +214,7 @@ library LibOrganisation {
         emit Events.nameChangeRequested(msg.sender);
     }
 
-    function editStudentName(individual[] memory _studentList) external {
+    function editStudentName(Individual[] calldata _studentList) external {
         Organisation storage org = orgStorage();
 
         onlyStudentOrStaff();
@@ -229,7 +228,7 @@ library LibOrganisation {
         emit Events.studentNamesChanged(_studentList.length);
     }
 
-    function editMentorsName(individual[] memory _mentorsList) external {
+    function editMentorsName(Individual[] calldata _mentorsList) external {
         Organisation storage org = orgStorage();
 
         onlyStudentOrStaff();
@@ -297,13 +296,13 @@ library LibOrganisation {
             revert Error.Invalid_Lecture_Id();
         if (org.lectureInstance[_lectureId].status == false)
             revert Error.Lecture_id_closed();
-        if (org.IndividualAttendanceRecord[msg.sender][_lectureId] == true)
+        if (org.individualAttendanceRecord[msg.sender][_lectureId] == true)
             revert Error.Already_Signed_Attendance_For_Id();
         if (org.lectureInstance[_lectureId].attendanceStartTime == 0) {
             org.lectureInstance[_lectureId].attendanceStartTime = block
                 .timestamp;
         }
-        org.IndividualAttendanceRecord[msg.sender][_lectureId] = true;
+        org.individualAttendanceRecord[msg.sender][_lectureId] = true;
         org.studentsTotalAttendance[msg.sender] =
             org.studentsTotalAttendance[msg.sender] +
             1;
@@ -355,7 +354,7 @@ library LibOrganisation {
         emit Events.attendanceClosed(_lectureId, msg.sender);
     }
 
-    function RecordResults(
+    function recordResults(
         uint256 testId,
         string calldata _resultCid
     ) external {
@@ -368,7 +367,7 @@ library LibOrganisation {
         emit Events.newResultUpdated(testId, msg.sender);
     }
 
-    function EvictStudents(address[] calldata studentsToRevoke) external {
+    function evictStudents(address[] calldata studentsToRevoke) external {
         Organisation storage org = orgStorage();
 
         onlyModerator();
@@ -423,13 +422,13 @@ library LibOrganisation {
         return Names;
     }
 
-    function MintCertificate(string memory Uri) external {
+    function mintCertificate(string memory Uri) external {
         Organisation storage org = orgStorage();
 
         onlyModerator();
         require(org.certificateIssued == false, "certificate already issued");
         INFT(org.certificateContract).batchMintTokens(org.students, Uri);
-        org.certiificateURI = Uri;
+        org.certificateURI = Uri;
         org.certificateIssued = true;
     }
 

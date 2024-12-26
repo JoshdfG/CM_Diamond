@@ -51,7 +51,7 @@ library LibAppStorage {
          * ============================================================ *
          */
         address[] students;
-        mapping(address => individual) studentsData;
+        mapping(address => Individual) studentsData;
         mapping(address => uint) indexInStudentsArray;
         mapping(address => uint) studentsTotalAttendance;
         mapping(address => bool) isStudent;
@@ -70,7 +70,7 @@ library LibAppStorage {
         mapping(address => uint) indexInMentorsArray;
         mapping(address => bytes[]) moderatorsTopic;
         mapping(address => bool) isStaff;
-        mapping(address => individual) mentorsData;
+        mapping(address => Individual) mentorsData;
     }
 
     struct lectureData {
@@ -165,7 +165,7 @@ library LibAppStorage {
         org.spokContract = _spokContract;
     }
 
-    function registerStaffs(individual[] calldata staffList) external {
+    function registerStaffs(Individual[] calldata staffList) external {
         Organisation storage org = layoutStorage();
 
         onlyModerator();
@@ -195,7 +195,7 @@ library LibAppStorage {
         org.moderator = newModerator;
     }
 
-    function registerStudents(individual[] calldata _studentList) external {
+    function registerStudents(Individual[] calldata _studentList) external {
         Organisation storage org = layoutStorage();
 
         onlyModerator();
@@ -227,7 +227,7 @@ library LibAppStorage {
         emit Events.nameChangeRequested(msg.sender);
     }
 
-    function editStudentName(individual[] memory _studentList) external {
+    function editStudentName(Individual[] memory _studentList) external {
         Organisation storage org = layoutStorage();
 
         onlyStudentOrStaff();
@@ -241,7 +241,7 @@ library LibAppStorage {
         emit Events.studentNamesChanged(_studentList.length);
     }
 
-    function editMentorsName(individual[] memory _mentorsList) external {
+    function editMentorsName(Individual[] memory _mentorsList) external {
         Organisation storage org = layoutStorage();
 
         onlyStudentOrStaff();

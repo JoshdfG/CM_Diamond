@@ -8,7 +8,7 @@ import "../organisation/facets/OrganisationFacet.sol";
 import "../organisation/libraries/LibOrganisation.sol";
 import "../../lib/openzeppelin-contracts.git/contracts/utils/Counters.sol";
 
-library LibAppFactory {
+library LibOrgFactory {
     // using Counters for Counters.Counter;
 
     // struct Storage {
@@ -43,9 +43,9 @@ library LibAppFactory {
     // event Initialized(string name, string symbol, address admin);
 
     bytes32 constant FACTORY_STORAGE_POSITION =
-        keccak256("diamond.standard.factory.storage");
+        keccak256("diamond.organisation.factory.storage");
 
-    function layoutStorage() internal pure returns (Factory storage f) {
+    function factoryStorage() internal pure returns (Factory storage f) {
         bytes32 position = FACTORY_STORAGE_POSITION;
         assembly {
             f.slot := position
