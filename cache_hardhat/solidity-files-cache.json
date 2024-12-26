@@ -1,0 +1,1859 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "/home/josh/Documents/web3bridge/Classmate Diamond/Foundry-Hardhat-Diamonds/contracts/Diamond.sol": {
+      "lastModificationDate": 1732833371033,
+      "contentHash": "d2ddbfd1be1eb493df9c1ce66801d5c6",
+      "sourceName": "contracts/Diamond.sol",
+      "solcConfig": {
+        "version": "0.8.27",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./libraries/LibDiamond.sol",
+        "./interfaces/IDiamondCut.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Diamond"
+      ]
+    },
+    "/home/josh/Documents/web3bridge/Classmate Diamond/Foundry-Hardhat-Diamonds/contracts/libraries/LibDiamond.sol": {
+      "lastModificationDate": 1732833371033,
+      "contentHash": "dcdb1f3846d50bed582056574eed38a2",
+      "sourceName": "contracts/libraries/LibDiamond.sol",
+      "solcConfig": {
+        "version": "0.8.27",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../interfaces/IDiamondCut.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "LibDiamond"
+      ]
+    },
+    "/home/josh/Documents/web3bridge/Classmate Diamond/Foundry-Hardhat-Diamonds/contracts/interfaces/IDiamondCut.sol": {
+      "lastModificationDate": 1732833371033,
+      "contentHash": "707e073af69d132ebdc36f0b766ed4d2",
+      "sourceName": "contracts/interfaces/IDiamondCut.sol",
+      "solcConfig": {
+        "version": "0.8.27",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IDiamondCut"
+      ]
+    },
+    "/home/josh/Documents/web3bridge/Classmate Diamond/Foundry-Hardhat-Diamonds/contracts/upgradeInitializers/DiamondInit.sol": {
+      "lastModificationDate": 1733948573693,
+      "contentHash": "6eb675dbfdcfff3b50e2f95a1b6989f5",
+      "sourceName": "contracts/upgradeInitializers/DiamondInit.sol",
+      "solcConfig": {
+        "version": "0.8.27",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../libraries/LibDiamond.sol",
+        "../interfaces/IDiamondLoupe.sol",
+        "../interfaces/IDiamondCut.sol",
+        "../interfaces/IERC173.sol",
+        "../../lib/openzeppelin-contracts.git/contracts/interfaces/IERC165.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "DiamondInit"
+      ]
+    },
+    "/home/josh/Documents/web3bridge/Classmate Diamond/Foundry-Hardhat-Diamonds/contracts/interfaces/IDiamondLoupe.sol": {
+      "lastModificationDate": 1732833371033,
+      "contentHash": "a471cd6a18e337530aa0fb37a1dd2294",
+      "sourceName": "contracts/interfaces/IDiamondLoupe.sol",
+      "solcConfig": {
+        "version": "0.8.27",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IDiamondLoupe"
+      ]
+    },
+    "/home/josh/Documents/web3bridge/Classmate Diamond/Foundry-Hardhat-Diamonds/contracts/interfaces/IERC173.sol": {
+      "lastModificationDate": 1732833371033,
+      "contentHash": "eeb2aa12c570075ef229caf578609e29",
+      "sourceName": "contracts/interfaces/IERC173.sol",
+      "solcConfig": {
+        "version": "0.8.27",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IERC173"
+      ]
+    },
+    "/home/josh/Documents/web3bridge/Classmate Diamond/Foundry-Hardhat-Diamonds/lib/openzeppelin-contracts.git/contracts/interfaces/IERC165.sol": {
+      "lastModificationDate": 1733948083277,
+      "contentHash": "d2854a0cc1609efe1263045930f4ecb1",
+      "sourceName": "lib/openzeppelin-contracts.git/contracts/interfaces/IERC165.sol",
+      "solcConfig": {
+        "version": "0.8.27",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../utils/introspection/IERC165.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": []
+    },
+    "/home/josh/Documents/web3bridge/Classmate Diamond/Foundry-Hardhat-Diamonds/lib/openzeppelin-contracts.git/contracts/utils/introspection/IERC165.sol": {
+      "lastModificationDate": 1732883309365,
+      "contentHash": "5a21a24ec719b683e7faf6eae0db9181",
+      "sourceName": "lib/openzeppelin-contracts.git/contracts/utils/introspection/IERC165.sol",
+      "solcConfig": {
+        "version": "0.8.27",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "IERC165"
+      ]
+    },
+    "/home/josh/Documents/web3bridge/Classmate Diamond/Foundry-Hardhat-Diamonds/lib/openzeppelin-contracts.git/contracts/interfaces/IERC4906.sol": {
+      "lastModificationDate": 1732883309338,
+      "contentHash": "8279a1df828392b1adc036367df51aec",
+      "sourceName": "lib/openzeppelin-contracts.git/contracts/interfaces/IERC4906.sol",
+      "solcConfig": {
+        "version": "0.8.27",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IERC165.sol",
+        "./IERC721.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "IERC4906"
+      ]
+    },
+    "/home/josh/Documents/web3bridge/Classmate Diamond/Foundry-Hardhat-Diamonds/lib/openzeppelin-contracts.git/contracts/interfaces/IERC721.sol": {
+      "lastModificationDate": 1732883309338,
+      "contentHash": "eaca1f369af8f976e20a4802af9cb348",
+      "sourceName": "lib/openzeppelin-contracts.git/contracts/interfaces/IERC721.sol",
+      "solcConfig": {
+        "version": "0.8.27",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../token/ERC721/IERC721.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": []
+    },
+    "/home/josh/Documents/web3bridge/Classmate Diamond/Foundry-Hardhat-Diamonds/lib/openzeppelin-contracts.git/contracts/token/ERC721/IERC721.sol": {
+      "lastModificationDate": 1732883309362,
+      "contentHash": "5e6582204afdb558d3105423d176c920",
+      "sourceName": "lib/openzeppelin-contracts.git/contracts/token/ERC721/IERC721.sol",
+      "solcConfig": {
+        "version": "0.8.27",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../utils/introspection/IERC165.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "IERC721"
+      ]
+    },
+    "/home/josh/Documents/web3bridge/Classmate Diamond/Foundry-Hardhat-Diamonds/lib/openzeppelin-contracts.git/contracts/token/ERC721/extensions/IERC721Metadata.sol": {
+      "lastModificationDate": 1732883309362,
+      "contentHash": "d93c073156485e7c43319a824127c796",
+      "sourceName": "lib/openzeppelin-contracts.git/contracts/token/ERC721/extensions/IERC721Metadata.sol",
+      "solcConfig": {
+        "version": "0.8.27",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../IERC721.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "IERC721Metadata"
+      ]
+    },
+    "/home/josh/Documents/web3bridge/Classmate Diamond/Foundry-Hardhat-Diamonds/lib/openzeppelin-contracts.git/contracts/token/ERC721/ERC721.sol": {
+      "lastModificationDate": 1732883309362,
+      "contentHash": "15d9754a2e479bf4c69638b7c6e2a7e6",
+      "sourceName": "lib/openzeppelin-contracts.git/contracts/token/ERC721/ERC721.sol",
+      "solcConfig": {
+        "version": "0.8.27",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IERC721.sol",
+        "./IERC721Receiver.sol",
+        "./extensions/IERC721Metadata.sol",
+        "../../utils/Context.sol",
+        "../../utils/Strings.sol",
+        "../../utils/introspection/ERC165.sol",
+        "../../interfaces/draft-IERC6093.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "ERC721"
+      ]
+    },
+    "/home/josh/Documents/web3bridge/Classmate Diamond/Foundry-Hardhat-Diamonds/lib/openzeppelin-contracts.git/contracts/utils/Context.sol": {
+      "lastModificationDate": 1732883309362,
+      "contentHash": "09334082e90e487d918823170e4806b1",
+      "sourceName": "lib/openzeppelin-contracts.git/contracts/utils/Context.sol",
+      "solcConfig": {
+        "version": "0.8.27",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "Context"
+      ]
+    },
+    "/home/josh/Documents/web3bridge/Classmate Diamond/Foundry-Hardhat-Diamonds/lib/openzeppelin-contracts.git/contracts/utils/Strings.sol": {
+      "lastModificationDate": 1732883309365,
+      "contentHash": "dc49d02df9a5af17ff2ba0c7d4c9be4f",
+      "sourceName": "lib/openzeppelin-contracts.git/contracts/utils/Strings.sol",
+      "solcConfig": {
+        "version": "0.8.27",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./math/Math.sol",
+        "./math/SignedMath.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "Strings"
+      ]
+    },
+    "/home/josh/Documents/web3bridge/Classmate Diamond/Foundry-Hardhat-Diamonds/lib/openzeppelin-contracts.git/contracts/interfaces/draft-IERC6093.sol": {
+      "lastModificationDate": 1732883309342,
+      "contentHash": "2d67be32f639a1f4f3fdb0a3f7f61602",
+      "sourceName": "lib/openzeppelin-contracts.git/contracts/interfaces/draft-IERC6093.sol",
+      "solcConfig": {
+        "version": "0.8.27",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "IERC1155Errors",
+        "IERC20Errors",
+        "IERC721Errors"
+      ]
+    },
+    "/home/josh/Documents/web3bridge/Classmate Diamond/Foundry-Hardhat-Diamonds/lib/openzeppelin-contracts.git/contracts/utils/introspection/ERC165.sol": {
+      "lastModificationDate": 1732883309365,
+      "contentHash": "58383deda501d7fb5d15ba143f2b80b3",
+      "sourceName": "lib/openzeppelin-contracts.git/contracts/utils/introspection/ERC165.sol",
+      "solcConfig": {
+        "version": "0.8.27",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IERC165.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "ERC165"
+      ]
+    },
+    "/home/josh/Documents/web3bridge/Classmate Diamond/Foundry-Hardhat-Diamonds/lib/openzeppelin-contracts.git/contracts/token/ERC721/IERC721Receiver.sol": {
+      "lastModificationDate": 1732883309362,
+      "contentHash": "2a849a7a71d5463f2462feba9bedfaeb",
+      "sourceName": "lib/openzeppelin-contracts.git/contracts/token/ERC721/IERC721Receiver.sol",
+      "solcConfig": {
+        "version": "0.8.27",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "IERC721Receiver"
+      ]
+    },
+    "/home/josh/Documents/web3bridge/Classmate Diamond/Foundry-Hardhat-Diamonds/lib/openzeppelin-contracts.git/contracts/utils/math/Math.sol": {
+      "lastModificationDate": 1732883309365,
+      "contentHash": "5eb91eea978bcb527346c11facbfadfb",
+      "sourceName": "lib/openzeppelin-contracts.git/contracts/utils/math/Math.sol",
+      "solcConfig": {
+        "version": "0.8.27",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "Math"
+      ]
+    },
+    "/home/josh/Documents/web3bridge/Classmate Diamond/Foundry-Hardhat-Diamonds/lib/openzeppelin-contracts.git/contracts/utils/math/SignedMath.sol": {
+      "lastModificationDate": 1732883309365,
+      "contentHash": "043001b4a3a329e572ece8f9cd5e7c2b",
+      "sourceName": "lib/openzeppelin-contracts.git/contracts/utils/math/SignedMath.sol",
+      "solcConfig": {
+        "version": "0.8.27",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "SignedMath"
+      ]
+    },
+    "/home/josh/Documents/web3bridge/Classmate Diamond/Foundry-Hardhat-Diamonds/lib/openzeppelin-contracts.git/contracts/token/ERC721/extensions/ERC721URIStorage.sol": {
+      "lastModificationDate": 1732883309362,
+      "contentHash": "7184f252604890f0bf4f8fde5df78e75",
+      "sourceName": "lib/openzeppelin-contracts.git/contracts/token/ERC721/extensions/ERC721URIStorage.sol",
+      "solcConfig": {
+        "version": "0.8.27",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../ERC721.sol",
+        "../../../utils/Strings.sol",
+        "../../../interfaces/IERC4906.sol",
+        "../../../interfaces/IERC165.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "ERC721URIStorage"
+      ]
+    },
+    "/home/josh/Documents/web3bridge/Classmate Diamond/Foundry-Hardhat-Diamonds/lib/openzeppelin-contracts.git/contracts/utils/Arrays.sol": {
+      "lastModificationDate": 1732883309362,
+      "contentHash": "bd4b7261a594fdef15c2edfd7e85e248",
+      "sourceName": "lib/openzeppelin-contracts.git/contracts/utils/Arrays.sol",
+      "solcConfig": {
+        "version": "0.8.27",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./StorageSlot.sol",
+        "./math/Math.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "Arrays"
+      ]
+    },
+    "/home/josh/Documents/web3bridge/Classmate Diamond/Foundry-Hardhat-Diamonds/lib/openzeppelin-contracts.git/contracts/utils/StorageSlot.sol": {
+      "lastModificationDate": 1732883309365,
+      "contentHash": "c6efb1080c1744be0681b96e35a34ce0",
+      "sourceName": "lib/openzeppelin-contracts.git/contracts/utils/StorageSlot.sol",
+      "solcConfig": {
+        "version": "0.8.27",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "StorageSlot"
+      ]
+    },
+    "/home/josh/Documents/web3bridge/Classmate Diamond/Foundry-Hardhat-Diamonds/lib/openzeppelin-contracts.git/contracts/token/ERC1155/ERC1155.sol": {
+      "lastModificationDate": 1732884136357,
+      "contentHash": "93a797995e1c5365c5eac298e558c11c",
+      "sourceName": "lib/openzeppelin-contracts.git/contracts/token/ERC1155/ERC1155.sol",
+      "solcConfig": {
+        "version": "0.8.27",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IERC1155.sol",
+        "./IERC1155Receiver.sol",
+        "./extensions/IERC1155MetadataURI.sol",
+        "../../utils/Context.sol",
+        "../../utils/introspection/ERC165.sol",
+        "../../utils/Arrays.sol",
+        "../../interfaces/draft-IERC6093.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "ERC1155"
+      ]
+    },
+    "/home/josh/Documents/web3bridge/Classmate Diamond/Foundry-Hardhat-Diamonds/lib/openzeppelin-contracts.git/contracts/token/ERC1155/IERC1155Receiver.sol": {
+      "lastModificationDate": 1732883309355,
+      "contentHash": "9220b7f38188963ea61bc789c8a2934c",
+      "sourceName": "lib/openzeppelin-contracts.git/contracts/token/ERC1155/IERC1155Receiver.sol",
+      "solcConfig": {
+        "version": "0.8.27",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../utils/introspection/IERC165.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "IERC1155Receiver"
+      ]
+    },
+    "/home/josh/Documents/web3bridge/Classmate Diamond/Foundry-Hardhat-Diamonds/lib/openzeppelin-contracts.git/contracts/token/ERC1155/IERC1155.sol": {
+      "lastModificationDate": 1732883309355,
+      "contentHash": "6ab9f00c6c5253d1501e8c50e8fdd57a",
+      "sourceName": "lib/openzeppelin-contracts.git/contracts/token/ERC1155/IERC1155.sol",
+      "solcConfig": {
+        "version": "0.8.27",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../utils/introspection/IERC165.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "IERC1155"
+      ]
+    },
+    "/home/josh/Documents/web3bridge/Classmate Diamond/Foundry-Hardhat-Diamonds/lib/openzeppelin-contracts.git/contracts/token/ERC1155/extensions/IERC1155MetadataURI.sol": {
+      "lastModificationDate": 1732883309358,
+      "contentHash": "4d4640093c8ba2601e7d7a03ed9bc995",
+      "sourceName": "lib/openzeppelin-contracts.git/contracts/token/ERC1155/extensions/IERC1155MetadataURI.sol",
+      "solcConfig": {
+        "version": "0.8.27",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../IERC1155.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "IERC1155MetadataURI"
+      ]
+    },
+    "/home/josh/Documents/web3bridge/Classmate Diamond/Foundry-Hardhat-Diamonds/lib/openzeppelin-contracts.git/contracts/access/Ownable.sol": {
+      "lastModificationDate": 1732883309328,
+      "contentHash": "b41051a8f11c7795ea0a8e8cfc02e435",
+      "sourceName": "lib/openzeppelin-contracts.git/contracts/access/Ownable.sol",
+      "solcConfig": {
+        "version": "0.8.27",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../utils/Context.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "Ownable"
+      ]
+    },
+    "/home/josh/Documents/web3bridge/Classmate Diamond/Foundry-Hardhat-Diamonds/contracts/certificates/SchoolCertificate.sol": {
+      "lastModificationDate": 1734998439015,
+      "contentHash": "7be8f72e90115764e5fd8100e7b1b53a",
+      "sourceName": "contracts/certificates/SchoolCertificate.sol",
+      "solcConfig": {
+        "version": "0.8.27",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../lib/openzeppelin-contracts.git/contracts/token/ERC721/ERC721.sol",
+        "../../lib/openzeppelin-contracts.git/contracts/token/ERC721/extensions/ERC721URIStorage.sol",
+        "../../lib/openzeppelin-contracts.git/contracts/access/Ownable.sol",
+        "../../lib/openzeppelin-contracts.git/contracts/utils/Counters.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Certificate"
+      ]
+    },
+    "/home/josh/Documents/web3bridge/Classmate Diamond/Foundry-Hardhat-Diamonds/lib/openzeppelin-contracts.git/contracts/utils/Counters.sol": {
+      "lastModificationDate": 1732883309365,
+      "contentHash": "2ca1530d986b87cba136b44c10e06d8f",
+      "sourceName": "lib/openzeppelin-contracts.git/contracts/utils/Counters.sol",
+      "solcConfig": {
+        "version": "0.8.27",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Counters"
+      ]
+    },
+    "/home/josh/Documents/web3bridge/Classmate Diamond/Foundry-Hardhat-Diamonds/contracts/certificates/certificateFactory.sol": {
+      "lastModificationDate": 1734998432235,
+      "contentHash": "55f9671814efbf77247451f8749c8ee0",
+      "sourceName": "contracts/certificates/certificateFactory.sol",
+      "solcConfig": {
+        "version": "0.8.27",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./SchoolCertificate.sol",
+        "./SchoolsNFT.sol",
+        "../libraries/LibCertificateFactory.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "certificateFactory"
+      ]
+    },
+    "/home/josh/Documents/web3bridge/Classmate Diamond/Foundry-Hardhat-Diamonds/contracts/libraries/LibCertificateFactory.sol": {
+      "lastModificationDate": 1734427741725,
+      "contentHash": "7cf798240b97b90f5a3ad446324274a3",
+      "sourceName": "contracts/libraries/LibCertificateFactory.sol",
+      "solcConfig": {
+        "version": "0.8.27",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "LibCertificateFactory"
+      ]
+    },
+    "/home/josh/Documents/web3bridge/Classmate Diamond/Foundry-Hardhat-Diamonds/contracts/certificates/SchoolsNFT.sol": {
+      "lastModificationDate": 1734998469872,
+      "contentHash": "70ebfbf9d8b5fcae4b82af69d3a725f6",
+      "sourceName": "contracts/certificates/SchoolsNFT.sol",
+      "solcConfig": {
+        "version": "0.8.27",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../lib/openzeppelin-contracts.git/contracts/token/ERC1155/ERC1155.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "SchoolsNFT"
+      ]
+    },
+    "/home/josh/Documents/web3bridge/Classmate Diamond/Foundry-Hardhat-Diamonds/contracts/facets/organisationFactoryFacet.sol": {
+      "lastModificationDate": 1735159405002,
+      "contentHash": "fb836f80e74b113e4ebdf8044f8be20b",
+      "sourceName": "contracts/facets/organisationFactoryFacet.sol",
+      "solcConfig": {
+        "version": "0.8.27",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./organisationFacet.sol",
+        "../interfaces/ICERTFACTORY.sol",
+        "../libraries/LibAppFactory.sol",
+        "../certificates/certificateFactory.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "organisationFactoryFacet"
+      ]
+    },
+    "/home/josh/Documents/web3bridge/Classmate Diamond/Foundry-Hardhat-Diamonds/contracts/interfaces/ICERTFACTORY.sol": {
+      "lastModificationDate": 1732833477109,
+      "contentHash": "6389bfd3f6c05178fc23506462186398",
+      "sourceName": "contracts/interfaces/ICERTFACTORY.sol",
+      "solcConfig": {
+        "version": "0.8.27",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.13"
+      ],
+      "artifacts": [
+        "ICERTFACTORY"
+      ]
+    },
+    "/home/josh/Documents/web3bridge/Classmate Diamond/Foundry-Hardhat-Diamonds/contracts/libraries/LibAppFactory.sol": {
+      "lastModificationDate": 1735159187271,
+      "contentHash": "fd2d344c657bef3b503dc120f378e516",
+      "sourceName": "contracts/libraries/LibAppFactory.sol",
+      "solcConfig": {
+        "version": "0.8.27",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../interfaces/IFactory.sol",
+        "../interfaces/INFT.sol",
+        "../interfaces/ICERTFACTORY.sol",
+        "../facets/organisationFacet.sol",
+        "../../lib/openzeppelin-contracts.git/contracts/utils/Counters.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "LibAppFactory"
+      ]
+    },
+    "/home/josh/Documents/web3bridge/Classmate Diamond/Foundry-Hardhat-Diamonds/contracts/facets/organisationFacet.sol": {
+      "lastModificationDate": 1735158125434,
+      "contentHash": "8366bbfd760fc2bad71242511895789b",
+      "sourceName": "contracts/facets/organisationFacet.sol",
+      "solcConfig": {
+        "version": "0.8.27",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../interfaces/INFT.sol",
+        "../interfaces/IFactory.sol",
+        "../libraries/Events.sol",
+        "../libraries/LibAppStorage.sol",
+        "../libraries/Error.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "organisationFacet"
+      ]
+    },
+    "/home/josh/Documents/web3bridge/Classmate Diamond/Foundry-Hardhat-Diamonds/contracts/interfaces/IFactory.sol": {
+      "lastModificationDate": 1734428751685,
+      "contentHash": "9b5bd1fb2538be623c18842547231e05",
+      "sourceName": "contracts/interfaces/IFactory.sol",
+      "solcConfig": {
+        "version": "0.8.27",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.13"
+      ],
+      "artifacts": [
+        "IFACTORY"
+      ]
+    },
+    "/home/josh/Documents/web3bridge/Classmate Diamond/Foundry-Hardhat-Diamonds/contracts/interfaces/INFT.sol": {
+      "lastModificationDate": 1732833477259,
+      "contentHash": "92304f1df92ca9b37063420bdb4cc1c0",
+      "sourceName": "contracts/interfaces/INFT.sol",
+      "solcConfig": {
+        "version": "0.8.27",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.13"
+      ],
+      "artifacts": [
+        "INFT"
+      ]
+    },
+    "/home/josh/Documents/web3bridge/Classmate Diamond/Foundry-Hardhat-Diamonds/contracts/libraries/Events.sol": {
+      "lastModificationDate": 1732840607833,
+      "contentHash": "4de9c76161426402bbef5c31aab956dd",
+      "sourceName": "contracts/libraries/Events.sol",
+      "solcConfig": {
+        "version": "0.8.27",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Events"
+      ]
+    },
+    "/home/josh/Documents/web3bridge/Classmate Diamond/Foundry-Hardhat-Diamonds/contracts/libraries/LibAppStorage.sol": {
+      "lastModificationDate": 1735158482471,
+      "contentHash": "a4a72b12f7f86630264206c33ed820ec",
+      "sourceName": "contracts/libraries/LibAppStorage.sol",
+      "solcConfig": {
+        "version": "0.8.27",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../interfaces/IFactory.sol",
+        "../interfaces/INFT.sol",
+        "../libraries/Error.sol",
+        "../libraries/Events.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "LibAppStorage"
+      ]
+    },
+    "/home/josh/Documents/web3bridge/Classmate Diamond/Foundry-Hardhat-Diamonds/contracts/libraries/Error.sol": {
+      "lastModificationDate": 1732878014277,
+      "contentHash": "5e0b656fc623bf29022a141393cd683b",
+      "sourceName": "contracts/libraries/Error.sol",
+      "solcConfig": {
+        "version": "0.8.27",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Error"
+      ]
+    },
+    "/home/josh/Documents/web3bridge/Classmate Diamond/Foundry-Hardhat-Diamonds/contracts/interfaces/Ichild.sol": {
+      "lastModificationDate": 1733946944164,
+      "contentHash": "8114ba3ac6f1082b04cfd620c70ffc7d",
+      "sourceName": "contracts/interfaces/Ichild.sol",
+      "solcConfig": {
+        "version": "0.8.27",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../interfaces/IFactory.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.13"
+      ],
+      "artifacts": [
+        "ICHILD"
+      ]
+    },
+    "/home/josh/Documents/web3bridge/Classmate Diamond/Foundry-Hardhat-Diamonds/contracts/facets/DiamondLoupeFacet.sol": {
+      "lastModificationDate": 1733948555549,
+      "contentHash": "6eddf9ea3ceb088f26cd77df971e1faf",
+      "sourceName": "contracts/facets/DiamondLoupeFacet.sol",
+      "solcConfig": {
+        "version": "0.8.27",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../libraries/LibDiamond.sol",
+        "../interfaces/IDiamondLoupe.sol",
+        "../../lib/openzeppelin-contracts.git/contracts/interfaces/IERC165.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "DiamondLoupeFacet"
+      ]
+    },
+    "/home/josh/Documents/web3bridge/Classmate Diamond/Foundry-Hardhat-Diamonds/contracts/facets/OwnershipFacet.sol": {
+      "lastModificationDate": 1732833371033,
+      "contentHash": "3ecfa87738e59d567e6c44c1708b9a7d",
+      "sourceName": "contracts/facets/OwnershipFacet.sol",
+      "solcConfig": {
+        "version": "0.8.27",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../libraries/LibDiamond.sol",
+        "../interfaces/IERC173.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "OwnershipFacet"
+      ]
+    },
+    "/home/josh/Documents/web3bridge/Classmate Diamond/Foundry-Hardhat-Diamonds/contracts/facets/DiamondCutFacet.sol": {
+      "lastModificationDate": 1735154757882,
+      "contentHash": "e2ec0b37a7283cab64921b96d091f9cc",
+      "sourceName": "contracts/facets/DiamondCutFacet.sol",
+      "solcConfig": {
+        "version": "0.8.27",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../interfaces/IDiamondCut.sol",
+        "../libraries/LibDiamond.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "DiamondCutFacet"
+      ]
+    },
+    "/home/josh/Documents/web3bridge/Classmate Diamond/Foundry-Hardhat-Diamonds/contracts/facets/LayoutChangerFacet.sol": {
+      "lastModificationDate": 1732958272832,
+      "contentHash": "52ef9b0efa4f1b5740d5c94e864b7a25",
+      "sourceName": "contracts/facets/LayoutChangerFacet.sol",
+      "solcConfig": {
+        "version": "0.8.27",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [],
+      "artifacts": []
+    },
+    "/home/josh/Documents/web3bridge/Classmate Diamond/Foundry-Hardhat-Diamonds/contracts/facets/LayoutChangerFacetFactory.sol": {
+      "lastModificationDate": 1732958264258,
+      "contentHash": "d1d584e96929a32d070bef7c61d677c2",
+      "sourceName": "contracts/facets/LayoutChangerFacetFactory.sol",
+      "solcConfig": {
+        "version": "0.8.27",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [],
+      "artifacts": []
+    },
+    "/home/josh/Documents/web3bridge/Classmate Diamond/Foundry-Hardhat-Diamonds/contracts/interfaces/IERC165.sol": {
+      "lastModificationDate": 1733948354115,
+      "contentHash": "b9434269b98cd725149014de41077df3",
+      "sourceName": "contracts/interfaces/IERC165.sol",
+      "solcConfig": {
+        "version": "0.8.27",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [],
+      "artifacts": []
+    }
+  }
+}
