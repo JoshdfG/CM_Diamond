@@ -1,7 +1,9 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "./Organisation.sol";
+import "../organisation/Organisation.sol";
+import "../organisation/facets/OrganisationFacet.sol";
+import "../organisation/libraries/LibOrganisation.sol";
 import "../interfaces/ICERTFACTORY.sol";
 import {LibAppFactory} from "../libraries/LibAppFactory.sol";
 import "../certificates/certificateFactory.sol";
