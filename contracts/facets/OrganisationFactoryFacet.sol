@@ -28,7 +28,7 @@ contract OrganisationFactoryFacet {
         f.initialized = true;
     }
 
-    function deployOrgDiamond() private {
+    function deployOrgDiamond() private returns (address) {
         DiamondInit diamondInit = new DiamondInit();
         DiamondCutFacet diamondCutFacet = new DiamondCutFacet();
         DiamondLoupeFacet diamondLoupeFacet = new DiamondLoupeFacet();
@@ -53,8 +53,12 @@ contract OrganisationFactoryFacet {
 
         bytes4[] memory organisationSelectors = new bytes4[](36);
         organisationSelectors[0] = OrganisationFacet.deploy.selector;
-        organisationSelectors[1] = OrganisationFacet.initializeContracts.selector;
-        organisationSelectors[2] = OrganisationFacet.requestNameCorrection.selector;
+        organisationSelectors[1] = OrganisationFacet
+            .initializeContracts
+            .selector;
+        organisationSelectors[2] = OrganisationFacet
+            .requestNameCorrection
+            .selector;
         organisationSelectors[3] = OrganisationFacet.editStudentName.selector;
         organisationSelectors[4] = OrganisationFacet.editMentorsName.selector;
         organisationSelectors[5] = OrganisationFacet.createAttendance.selector;
@@ -73,9 +77,15 @@ contract OrganisationFactoryFacet {
         organisationSelectors[18] = OrganisationFacet.listStudents.selector;
         organisationSelectors[19] = OrganisationFacet.verifyStudent.selector;
         organisationSelectors[20] = OrganisationFacet.getStudentName.selector;
-        organisationSelectors[21] = OrganisationFacet.getStudentAttendanceRatio.selector;
-        organisationSelectors[22] = OrganisationFacet.getStudentsPresent.selector;
-        organisationSelectors[23] = OrganisationFacet.listClassesAttended.selector;
+        organisationSelectors[21] = OrganisationFacet
+            .getStudentAttendanceRatio
+            .selector;
+        organisationSelectors[22] = OrganisationFacet
+            .getStudentsPresent
+            .selector;
+        organisationSelectors[23] = OrganisationFacet
+            .listClassesAttended
+            .selector;
         organisationSelectors[24] = OrganisationFacet.getLectureData.selector;
         organisationSelectors[25] = OrganisationFacet.listMentors.selector;
         organisationSelectors[26] = OrganisationFacet.verifyMentor.selector;
@@ -83,11 +93,19 @@ contract OrganisationFactoryFacet {
         organisationSelectors[28] = OrganisationFacet.getClassesTaugth.selector;
         organisationSelectors[29] = OrganisationFacet.getMentorOnDuty.selector;
         organisationSelectors[30] = OrganisationFacet.getModerator.selector;
-        organisationSelectors[31] = OrganisationFacet.getOrganizationName.selector;
+        organisationSelectors[31] = OrganisationFacet
+            .getOrganizationName
+            .selector;
         organisationSelectors[32] = OrganisationFacet.getCohortName.selector;
-        organisationSelectors[33] = OrganisationFacet.getOrganisationImageUri.selector;
-        organisationSelectors[34] = OrganisationFacet.toggleOrganizationStatus.selector;
-        organisationSelectors[35] = OrganisationFacet.getOrganizationStatus.selector;
+        organisationSelectors[33] = OrganisationFacet
+            .getOrganisationImageUri
+            .selector;
+        organisationSelectors[34] = OrganisationFacet
+            .toggleOrganizationStatus
+            .selector;
+        organisationSelectors[35] = OrganisationFacet
+            .getOrganizationStatus
+            .selector;
 
         cut[0] = FacetCut({
             facetAddress: address(diamondCutFacet),
@@ -113,9 +131,14 @@ contract OrganisationFactoryFacet {
             functionSelectors: organisationSelectors
         });
 
-        Organisation organization = new Organisation(msg.sender, cut, address(diamondInit), abi.encode(DiamondInit.init.selector));
+        Organisation organization = new Organisation(
+            msg.sender,
+            cut,
+            address(diamondInit),
+            abi.encode(DiamondInit.init.selector)
+        );
 
-
+        return address(organization);
     }
 
     function createorganisation(
@@ -136,51 +159,45 @@ contract OrganisationFactoryFacet {
 
         f.organisationAdmin = msg.sender;
 
-        // Organisation organisationAddress = new Organisation(
-        //     _organisation,
-        //     _cohort,
-        //     f.organisationAdmin,
-        //     _adminName,
-        //     _uri
-        // );
+        address organisationAddress = deployOrgDiamond();
 
-        // initialize(f.certificateFactory);
+        initialize(f.certificateFactory);
 
-        // f.Organisations.push(address(organisationAddress));
+        f.Organisations.push(address(organisationAddress));
 
-        // f.validOrganisation[address(organisationAddress)] = true;
+        f.validOrganisation[address(organisationAddress)] = true;
 
-        // // f.certificateFactory = address(new certificateFactory());
+        // f.certificateFactory = address(new certificateFactory());
 
-        // (
-        //     address AttendanceAddr,
-        //     address CertificateAddr,
-        //     address mentorsSpokAddr
-        // ) = ICERTFACTORY(f.certificateFactory).completePackage(
-        //         _organisation,
-        //         _cohort,
-        //         _uri,
-        //         address(organisationAddress)
-        //     );
+        (
+            address AttendanceAddr,
+            address CertificateAddr,
+            address mentorsSpokAddr
+        ) = ICERTFACTORY(f.certificateFactory).completePackage(
+                _organisation,
+                _cohort,
+                _uri,
+                address(organisationAddress)
+            );
 
-        // organisationAddress.initializeContracts(
-        //     address(AttendanceAddr),
-        //     address(mentorsSpokAddr),
-        //     address(CertificateAddr)
-        // );
+        OrganisationFacet(organisationAddress).initializeContracts(
+            address(AttendanceAddr),
+            address(mentorsSpokAddr),
+            address(CertificateAddr)
+        );
 
-        // uint orgLength = f.memberOrganisations[msg.sender].length;
+        uint orgLength = f.memberOrganisations[msg.sender].length;
 
-        // f.studentOrganisationIndex[msg.sender][
-        //     address(organisationAddress)
-        // ] = orgLength;
+        f.studentOrganisationIndex[msg.sender][
+            address(organisationAddress)
+        ] = orgLength;
 
-        // f.memberOrganisations[msg.sender].push(address(organisationAddress));
+        f.memberOrganisations[msg.sender].push(address(organisationAddress));
 
-        // Nft = address(AttendanceAddr);
-        // certificate = address(CertificateAddr);
-        // mentorsSpok = address(mentorsSpokAddr);
-        // organisation = address(organisationAddress);
+        Nft = address(AttendanceAddr);
+        certificate = address(CertificateAddr);
+        mentorsSpok = address(mentorsSpokAddr);
+        organisation = address(organisationAddress);
     }
 
     function register(Individual[] calldata _individual) public {
