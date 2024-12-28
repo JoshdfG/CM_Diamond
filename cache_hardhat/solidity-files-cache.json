@@ -2,15 +2,15 @@
   "_format": "hh-sol-cache-2",
   "files": {
     "/home/josh/Documents/web3bridge/Classmate Diamond/Foundry-Hardhat-Diamonds/contracts/Diamond.sol": {
-      "lastModificationDate": 1732833371033,
-      "contentHash": "d2ddbfd1be1eb493df9c1ce66801d5c6",
+      "lastModificationDate": 1735277035521,
+      "contentHash": "be9595c551a9a025248fef26c3cbc5a1",
       "sourceName": "contracts/Diamond.sol",
       "solcConfig": {
         "version": "0.8.27",
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 20000
           },
           "evmVersion": "paris",
           "outputSelection": {
@@ -41,15 +41,15 @@
       ]
     },
     "/home/josh/Documents/web3bridge/Classmate Diamond/Foundry-Hardhat-Diamonds/contracts/libraries/LibDiamond.sol": {
-      "lastModificationDate": 1732833371033,
-      "contentHash": "dcdb1f3846d50bed582056574eed38a2",
+      "lastModificationDate": 1735277035527,
+      "contentHash": "da4c87daa87fee856f01a844f448d06b",
       "sourceName": "contracts/libraries/LibDiamond.sol",
       "solcConfig": {
         "version": "0.8.27",
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 20000
           },
           "evmVersion": "paris",
           "outputSelection": {
@@ -79,15 +79,15 @@
       ]
     },
     "/home/josh/Documents/web3bridge/Classmate Diamond/Foundry-Hardhat-Diamonds/contracts/interfaces/IDiamondCut.sol": {
-      "lastModificationDate": 1732833371033,
-      "contentHash": "707e073af69d132ebdc36f0b766ed4d2",
+      "lastModificationDate": 1735277035524,
+      "contentHash": "e40e0aa2b046cb8f00e096de58edac36",
       "sourceName": "contracts/interfaces/IDiamondCut.sol",
       "solcConfig": {
         "version": "0.8.27",
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 20000
           },
           "evmVersion": "paris",
           "outputSelection": {
@@ -123,7 +123,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 20000
           },
           "evmVersion": "paris",
           "outputSelection": {
@@ -165,7 +165,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 20000
           },
           "evmVersion": "paris",
           "outputSelection": {
@@ -201,7 +201,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 20000
           },
           "evmVersion": "paris",
           "outputSelection": {
@@ -237,7 +237,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 20000
           },
           "evmVersion": "paris",
           "outputSelection": {
@@ -273,7 +273,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 20000
           },
           "evmVersion": "paris",
           "outputSelection": {
@@ -309,7 +309,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 20000
           },
           "evmVersion": "paris",
           "outputSelection": {
@@ -348,7 +348,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 20000
           },
           "evmVersion": "paris",
           "outputSelection": {
@@ -384,7 +384,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 20000
           },
           "evmVersion": "paris",
           "outputSelection": {
@@ -422,7 +422,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 20000
           },
           "evmVersion": "paris",
           "outputSelection": {
@@ -460,7 +460,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 20000
           },
           "evmVersion": "paris",
           "outputSelection": {
@@ -504,7 +504,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 20000
           },
           "evmVersion": "paris",
           "outputSelection": {
@@ -540,7 +540,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 20000
           },
           "evmVersion": "paris",
           "outputSelection": {
@@ -579,7 +579,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 20000
           },
           "evmVersion": "paris",
           "outputSelection": {
@@ -617,7 +617,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 20000
           },
           "evmVersion": "paris",
           "outputSelection": {
@@ -655,7 +655,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 20000
           },
           "evmVersion": "paris",
           "outputSelection": {
@@ -691,7 +691,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 20000
           },
           "evmVersion": "paris",
           "outputSelection": {
@@ -727,7 +727,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 20000
           },
           "evmVersion": "paris",
           "outputSelection": {
@@ -763,7 +763,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 20000
           },
           "evmVersion": "paris",
           "outputSelection": {
@@ -804,7 +804,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 20000
           },
           "evmVersion": "paris",
           "outputSelection": {
@@ -843,7 +843,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 20000
           },
           "evmVersion": "paris",
           "outputSelection": {
@@ -879,7 +879,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 20000
           },
           "evmVersion": "paris",
           "outputSelection": {
@@ -923,7 +923,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 20000
           },
           "evmVersion": "paris",
           "outputSelection": {
@@ -961,7 +961,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 20000
           },
           "evmVersion": "paris",
           "outputSelection": {
@@ -999,7 +999,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 20000
           },
           "evmVersion": "paris",
           "outputSelection": {
@@ -1037,7 +1037,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 20000
           },
           "evmVersion": "paris",
           "outputSelection": {
@@ -1075,7 +1075,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 20000
           },
           "evmVersion": "paris",
           "outputSelection": {
@@ -1116,7 +1116,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 20000
           },
           "evmVersion": "paris",
           "outputSelection": {
@@ -1152,7 +1152,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 20000
           },
           "evmVersion": "paris",
           "outputSelection": {
@@ -1192,7 +1192,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 20000
           },
           "evmVersion": "paris",
           "outputSelection": {
@@ -1228,7 +1228,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 20000
           },
           "evmVersion": "paris",
           "outputSelection": {
@@ -1257,47 +1257,6 @@
         "SchoolsNFT"
       ]
     },
-    "/home/josh/Documents/web3bridge/Classmate Diamond/Foundry-Hardhat-Diamonds/contracts/facets/organisationFactoryFacet.sol": {
-      "lastModificationDate": 1735159405002,
-      "contentHash": "fb836f80e74b113e4ebdf8044f8be20b",
-      "sourceName": "contracts/facets/organisationFactoryFacet.sol",
-      "solcConfig": {
-        "version": "0.8.27",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "evmVersion": "paris",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "./organisationFacet.sol",
-        "../interfaces/ICERTFACTORY.sol",
-        "../libraries/LibAppFactory.sol",
-        "../certificates/certificateFactory.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.0"
-      ],
-      "artifacts": [
-        "organisationFactoryFacet"
-      ]
-    },
     "/home/josh/Documents/web3bridge/Classmate Diamond/Foundry-Hardhat-Diamonds/contracts/interfaces/ICERTFACTORY.sol": {
       "lastModificationDate": 1732833477109,
       "contentHash": "6389bfd3f6c05178fc23506462186398",
@@ -1307,7 +1266,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 20000
           },
           "evmVersion": "paris",
           "outputSelection": {
@@ -1334,100 +1293,16 @@
         "ICERTFACTORY"
       ]
     },
-    "/home/josh/Documents/web3bridge/Classmate Diamond/Foundry-Hardhat-Diamonds/contracts/libraries/LibAppFactory.sol": {
-      "lastModificationDate": 1735159187271,
-      "contentHash": "fd2d344c657bef3b503dc120f378e516",
-      "sourceName": "contracts/libraries/LibAppFactory.sol",
-      "solcConfig": {
-        "version": "0.8.27",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "evmVersion": "paris",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "../interfaces/IFactory.sol",
-        "../interfaces/INFT.sol",
-        "../interfaces/ICERTFACTORY.sol",
-        "../facets/organisationFacet.sol",
-        "../../lib/openzeppelin-contracts.git/contracts/utils/Counters.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.0"
-      ],
-      "artifacts": [
-        "LibAppFactory"
-      ]
-    },
-    "/home/josh/Documents/web3bridge/Classmate Diamond/Foundry-Hardhat-Diamonds/contracts/facets/organisationFacet.sol": {
-      "lastModificationDate": 1735158125434,
-      "contentHash": "8366bbfd760fc2bad71242511895789b",
-      "sourceName": "contracts/facets/organisationFacet.sol",
-      "solcConfig": {
-        "version": "0.8.27",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "evmVersion": "paris",
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "../interfaces/INFT.sol",
-        "../interfaces/IFactory.sol",
-        "../libraries/Events.sol",
-        "../libraries/LibAppStorage.sol",
-        "../libraries/Error.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.0"
-      ],
-      "artifacts": [
-        "organisationFacet"
-      ]
-    },
     "/home/josh/Documents/web3bridge/Classmate Diamond/Foundry-Hardhat-Diamonds/contracts/interfaces/IFactory.sol": {
-      "lastModificationDate": 1734428751685,
-      "contentHash": "9b5bd1fb2538be623c18842547231e05",
+      "lastModificationDate": 1735277035527,
+      "contentHash": "0be94b3d23dd1089412cdb6438ac787b",
       "sourceName": "contracts/interfaces/IFactory.sol",
       "solcConfig": {
         "version": "0.8.27",
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 20000
           },
           "evmVersion": "paris",
           "outputSelection": {
@@ -1463,7 +1338,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 20000
           },
           "evmVersion": "paris",
           "outputSelection": {
@@ -1499,7 +1374,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 20000
           },
           "evmVersion": "paris",
           "outputSelection": {
@@ -1527,15 +1402,15 @@
       ]
     },
     "/home/josh/Documents/web3bridge/Classmate Diamond/Foundry-Hardhat-Diamonds/contracts/libraries/LibAppStorage.sol": {
-      "lastModificationDate": 1735158482471,
-      "contentHash": "a4a72b12f7f86630264206c33ed820ec",
+      "lastModificationDate": 1735277035527,
+      "contentHash": "663657174f8f97ae452964500860d386",
       "sourceName": "contracts/libraries/LibAppStorage.sol",
       "solcConfig": {
         "version": "0.8.27",
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 20000
           },
           "evmVersion": "paris",
           "outputSelection": {
@@ -1576,7 +1451,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 20000
           },
           "evmVersion": "paris",
           "outputSelection": {
@@ -1604,15 +1479,15 @@
       ]
     },
     "/home/josh/Documents/web3bridge/Classmate Diamond/Foundry-Hardhat-Diamonds/contracts/interfaces/Ichild.sol": {
-      "lastModificationDate": 1733946944164,
-      "contentHash": "8114ba3ac6f1082b04cfd620c70ffc7d",
+      "lastModificationDate": 1735277035527,
+      "contentHash": "05d613b328fb02d81777ef2f4dfdf456",
       "sourceName": "contracts/interfaces/Ichild.sol",
       "solcConfig": {
         "version": "0.8.27",
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 20000
           },
           "evmVersion": "paris",
           "outputSelection": {
@@ -1650,7 +1525,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 20000
           },
           "evmVersion": "paris",
           "outputSelection": {
@@ -1690,7 +1565,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 20000
           },
           "evmVersion": "paris",
           "outputSelection": {
@@ -1721,15 +1596,15 @@
       ]
     },
     "/home/josh/Documents/web3bridge/Classmate Diamond/Foundry-Hardhat-Diamonds/contracts/facets/DiamondCutFacet.sol": {
-      "lastModificationDate": 1735154757882,
-      "contentHash": "e2ec0b37a7283cab64921b96d091f9cc",
+      "lastModificationDate": 1735277035524,
+      "contentHash": "c88196c407b3c2bc85c8b4c556607744",
       "sourceName": "contracts/facets/DiamondCutFacet.sol",
       "solcConfig": {
         "version": "0.8.27",
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 20000
           },
           "evmVersion": "paris",
           "outputSelection": {
@@ -1768,7 +1643,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 20000
           },
           "evmVersion": "paris",
           "outputSelection": {
@@ -1800,7 +1675,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 20000
           },
           "evmVersion": "paris",
           "outputSelection": {
@@ -1824,15 +1699,15 @@
       "artifacts": []
     },
     "/home/josh/Documents/web3bridge/Classmate Diamond/Foundry-Hardhat-Diamonds/contracts/interfaces/IERC165.sol": {
-      "lastModificationDate": 1733948354115,
-      "contentHash": "b9434269b98cd725149014de41077df3",
+      "lastModificationDate": 1735277035524,
+      "contentHash": "f8f9ee2c76e1678bfead7a3fad131934",
       "sourceName": "contracts/interfaces/IERC165.sol",
       "solcConfig": {
         "version": "0.8.27",
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 20000
           },
           "evmVersion": "paris",
           "outputSelection": {
@@ -1852,8 +1727,270 @@
         }
       },
       "imports": [],
-      "versionPragmas": [],
-      "artifacts": []
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IERC165"
+      ]
+    },
+    "/home/josh/Documents/web3bridge/Classmate Diamond/Foundry-Hardhat-Diamonds/contracts/organisation/Organisation.sol": {
+      "lastModificationDate": 1735277159601,
+      "contentHash": "16f59a2e6efa4ef6991a5f5f84f09381",
+      "sourceName": "contracts/organisation/Organisation.sol",
+      "solcConfig": {
+        "version": "0.8.27",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 20000
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../Diamond.sol",
+        "../interfaces/IDiamondCut.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Organisation"
+      ]
+    },
+    "/home/josh/Documents/web3bridge/Classmate Diamond/Foundry-Hardhat-Diamonds/contracts/facets/OrganisationFactoryFacet.sol": {
+      "lastModificationDate": 1735277035524,
+      "contentHash": "6fe4354a76c30debd0dcef7c13363ba9",
+      "sourceName": "contracts/facets/OrganisationFactoryFacet.sol",
+      "solcConfig": {
+        "version": "0.8.27",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 20000
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../organisation/Organisation.sol",
+        "../organisation/facets/OrganisationFacet.sol",
+        "../organisation/libraries/LibOrganisation.sol",
+        "../upgradeInitializers/DiamondInit.sol",
+        "../organisation/interfaces/IOrganisation.sol",
+        "../organisation/facets/OrganisationFacet.sol",
+        "../organisation/Organisation.sol",
+        "../facets/DiamondCutFacet.sol",
+        "../facets/DiamondLoupeFacet.sol",
+        "../facets/OwnershipFacet.sol",
+        "../interfaces/ICERTFACTORY.sol",
+        "../interfaces/IDiamondCut.sol",
+        "../interfaces/IDiamondLoupe.sol",
+        "../interfaces/IERC173.sol",
+        "../libraries/LibOrgFactory.sol",
+        "../certificates/certificateFactory.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "OrganisationFactoryFacet"
+      ]
+    },
+    "/home/josh/Documents/web3bridge/Classmate Diamond/Foundry-Hardhat-Diamonds/contracts/organisation/facets/OrganisationFacet.sol": {
+      "lastModificationDate": 1735277035531,
+      "contentHash": "591bad93d83cca78bdf34edf683e4f27",
+      "sourceName": "contracts/organisation/facets/OrganisationFacet.sol",
+      "solcConfig": {
+        "version": "0.8.27",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 20000
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../interfaces/INFT.sol",
+        "../../interfaces/IFactory.sol",
+        "../../libraries/Events.sol",
+        "../libraries/LibOrganisation.sol",
+        "../interfaces/IOrganisation.sol",
+        "../../libraries/Error.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "OrganisationFacet"
+      ]
+    },
+    "/home/josh/Documents/web3bridge/Classmate Diamond/Foundry-Hardhat-Diamonds/contracts/organisation/libraries/LibOrganisation.sol": {
+      "lastModificationDate": 1735277035531,
+      "contentHash": "cdbd37f1d3802d0ffc2e25ece77388e2",
+      "sourceName": "contracts/organisation/libraries/LibOrganisation.sol",
+      "solcConfig": {
+        "version": "0.8.27",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 20000
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../interfaces/IFactory.sol",
+        "../../interfaces/INFT.sol",
+        "../../libraries/Error.sol",
+        "../../libraries/Events.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "LibOrganisation"
+      ]
+    },
+    "/home/josh/Documents/web3bridge/Classmate Diamond/Foundry-Hardhat-Diamonds/contracts/organisation/interfaces/IOrganisation.sol": {
+      "lastModificationDate": 1735277035531,
+      "contentHash": "724de3c6f97603f7fb4dd2f3cd53e38f",
+      "sourceName": "contracts/organisation/interfaces/IOrganisation.sol",
+      "solcConfig": {
+        "version": "0.8.27",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 20000
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../libraries/LibOrganisation.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IOrganisation"
+      ]
+    },
+    "/home/josh/Documents/web3bridge/Classmate Diamond/Foundry-Hardhat-Diamonds/contracts/libraries/LibOrgFactory.sol": {
+      "lastModificationDate": 1735277035527,
+      "contentHash": "0f38a995e52fcc277585d1cbe17fbead",
+      "sourceName": "contracts/libraries/LibOrgFactory.sol",
+      "solcConfig": {
+        "version": "0.8.27",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 20000
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../interfaces/IFactory.sol",
+        "../interfaces/INFT.sol",
+        "../interfaces/ICERTFACTORY.sol",
+        "../organisation/Organisation.sol",
+        "../organisation/facets/OrganisationFacet.sol",
+        "../organisation/libraries/LibOrganisation.sol",
+        "../../lib/openzeppelin-contracts.git/contracts/utils/Counters.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "LibOrgFactory"
+      ]
     }
   }
 }

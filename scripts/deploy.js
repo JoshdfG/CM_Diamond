@@ -4,7 +4,9 @@ const fs = require("fs");
 
 async function deployDiamond() {
   const accounts = await ethers.getSigners();
-  const contractOwner = accounts[0];
+  // const contractOwner = accounts[0];
+  const contractOwner = new ethers.Wallet(process.env.PRIVATE_KEY).address;
+  const address_zero = "0x0000000000000000000000000000000000000000";
 
   // deploy DiamondCutFacet
   const DiamondCutFacet = await ethers.getContractFactory("DiamondCutFacet");
@@ -16,7 +18,9 @@ async function deployDiamond() {
   const Diamond = await ethers.getContractFactory("Diamond");
   const diamond = await Diamond.deploy(
     contractOwner.address,
-    diamondCutFacet.address
+    diamondCutFacet.address,
+    address_zero,
+    ""
   );
   await diamond.deployed();
   console.log("Diamond deployed:", diamond.address);
@@ -35,8 +39,7 @@ async function deployDiamond() {
   const FacetNames = [
     "DiamondLoupeFacet",
     "OwnershipFacet",
-    "organisationFacet",
-    "organisationFactoryFacet",
+    "OrganisationFactoryFacet",
   ];
   const cut = [];
   for (const FacetName of FacetNames) {
