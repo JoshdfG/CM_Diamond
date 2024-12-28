@@ -167,8 +167,6 @@ contract OrganisationFactoryFacet {
 
         f.validOrganisation[address(organisationAddress)] = true;
 
-        // f.certificateFactory = address(new certificateFactory());
-
         (
             address AttendanceAddr,
             address CertificateAddr,
