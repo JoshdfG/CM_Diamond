@@ -8,12 +8,6 @@ async function deployDiamond() {
   const contractOwner = new ethers.Wallet(process.env.PRIVATE_KEY).address;
   const address_zero = "0x0000000000000000000000000000000000000000";
 
-  // deploy DiamondCutFacet
-  const DiamondCutFacet = await ethers.getContractFactory("DiamondCutFacet");
-  const diamondCutFacet = await DiamondCutFacet.deploy();
-  await diamondCutFacet.deployed();
-  console.log("DiamondCutFacet deployed:", diamondCutFacet.address);
-  
   // deploy DiamondInit
   // DiamondInit provides a function that is called when the diamond is upgraded to initialize state variables
   // Read about how the diamondCut function works here: https://eips.ethereum.org/EIPS/eip-2535#addingreplacingremoving-functions
@@ -21,14 +15,14 @@ async function deployDiamond() {
   const diamondInit = await DiamondInit.deploy();
   await diamondInit.deployed();
   console.log("DiamondInit deployed:", diamondInit.address);
-  
+
   // deploy facets
   console.log("");
   console.log("Deploying facets");
   const FacetNames = [
+    "DiamondCutFacet",
     "DiamondLoupeFacet",
     "OwnershipFacet",
-    "OrganisationFactoryFacet",
   ];
   const cut = [];
   for (const FacetName of FacetNames) {
@@ -42,7 +36,33 @@ async function deployDiamond() {
       functionSelectors: getSelectors(facet),
     });
   }
-  
+
+  // deploy LibOrganisation
+  const LibOrganisation = await ethers.getContractFactory("LibOrganisation");
+  const libOrganisation = await LibOrganisation.deploy();
+  console.log("LibOrganisation deployed:", libOrganisation.address);
+
+  // deploy OrganisationFactoryFacet
+  const OrganisationFactoryFacet = await ethers.getContractFactory(
+    "OrganisationFactoryFacet", {
+      libraries: {
+        LibOrganisation: libOrganisation.address,
+      },
+    }
+  );
+  const organisationFactoryFacet = await OrganisationFactoryFacet.deploy();
+  await organisationFactoryFacet.deployed();
+  console.log(
+    "OrganisationFactoryFacet deployed:",
+    organisationFactoryFacet.address
+  );
+
+  cut.push({
+    facetAddress: organisationFactoryFacet.address,
+    action: FacetCutAction.Add,
+    functionSelectors: getSelectors(organisationFactoryFacet),
+  });
+
   // deploy Diamond
   const Diamond = await ethers.getContractFactory("Diamond");
   const diamond = await Diamond.deploy(
