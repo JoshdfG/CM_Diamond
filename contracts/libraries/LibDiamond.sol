@@ -47,6 +47,7 @@ library LibDiamond {
         mapping(bytes4 => bool) supportedInterfaces;
         // owner of the contract
         address contractOwner;
+        address libraryAddress;
     }
 
     function diamondStorage()
@@ -81,11 +82,7 @@ library LibDiamond {
             revert NotDiamondOwner();
     }
 
-    event DiamondCut(
-        FacetCut[] _diamondCut,
-        address _init,
-        bytes _calldata
-    );
+    event DiamondCut(FacetCut[] _diamondCut, address _init, bytes _calldata);
 
     // Internal function version of diamondCut
     function diamondCut(

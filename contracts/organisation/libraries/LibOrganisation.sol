@@ -122,8 +122,8 @@ library LibOrganisation {
         address _moderator,
         string memory _adminName,
         string memory _uri
-    ) external {
-        Organisation storage org = orgStorage();
+    ) internal {
+        LibOrganisation.Organisation storage org = LibOrganisation.orgStorage();
         org.moderator = _moderator;
         org.organization = _organization;
         org.cohort = _cohort;
@@ -138,21 +138,21 @@ library LibOrganisation {
         org.isOngoing = true;
     }
 
-    function initializeContracts(
-        address _NftContract,
-        address _certificateContract,
-        address _spokContract
-    ) external {
-        Organisation storage org = orgStorage();
+    // function initializeContracts(
+    //     address _NftContract,
+    //     address _certificateContract,
+    //     address _spokContract
+    // ) internal {
+    //     Organisation storage org = orgStorage();
 
-        if (msg.sender != org.organisationFactory)
-            revert Error.not_Autorized_Caller();
-        org.NftContract = _NftContract;
-        org.certificateContract = _certificateContract;
-        org.spokContract = _spokContract;
-    }
+    //     if (msg.sender != org.organisationFactory)
+    //         revert Error.not_Autorized_Caller();
+    //     org.NftContract = _NftContract;
+    //     org.certificateContract = _certificateContract;
+    //     org.spokContract = _spokContract;
+    // }
 
-    function registerStaffs(Individual[] calldata staffList) external {
+    function registerStaffs(Individual[] calldata staffList) internal {
         Organisation storage org = orgStorage();
 
         onlyModerator();
@@ -174,7 +174,7 @@ library LibOrganisation {
         emit Events.staffsRegistered(staffList.length);
     }
 
-    function TransferOwnership(address newModerator) external {
+    function TransferOwnership(address newModerator) internal {
         Organisation storage org = orgStorage();
 
         onlyModerator();
@@ -182,7 +182,7 @@ library LibOrganisation {
         org.moderator = newModerator;
     }
 
-    function registerStudents(Individual[] calldata _studentList) external {
+    function registerStudents(Individual[] calldata _studentList) internal {
         Organisation storage org = orgStorage();
 
         onlyModerator();
@@ -204,7 +204,7 @@ library LibOrganisation {
         emit Events.studentsRegistered(_studentList.length);
     }
 
-    function requestNameCorrection() external {
+    function requestNameCorrection() internal {
         Organisation storage org = orgStorage();
 
         onlyStudentOrStaff();
@@ -214,7 +214,7 @@ library LibOrganisation {
         emit Events.nameChangeRequested(msg.sender);
     }
 
-    function editStudentName(Individual[] calldata _studentList) external {
+    function editStudentName(Individual[] calldata _studentList) internal {
         Organisation storage org = orgStorage();
 
         onlyStudentOrStaff();
@@ -228,7 +228,7 @@ library LibOrganisation {
         emit Events.studentNamesChanged(_studentList.length);
     }
 
-    function editMentorsName(Individual[] calldata _mentorsList) external {
+    function editMentorsName(Individual[] calldata _mentorsList) internal {
         Organisation storage org = orgStorage();
 
         onlyStudentOrStaff();
@@ -246,7 +246,7 @@ library LibOrganisation {
         bytes calldata _lectureId,
         string calldata _uri,
         string calldata _topic
-    ) external {
+    ) internal {
         Organisation storage org = orgStorage();
 
         onlyMentorOnDuty();
@@ -263,7 +263,7 @@ library LibOrganisation {
         emit Events.attendanceCreated(_lectureId, _uri, _topic, msg.sender);
     }
 
-    function mintMentorsSpok(string memory Uri) external {
+    function mintMentorsSpok(string memory Uri) internal {
         Organisation storage org = orgStorage();
 
         onlyModerator();
@@ -276,7 +276,7 @@ library LibOrganisation {
     function editTopic(
         bytes memory _lectureId,
         string calldata _topic
-    ) external {
+    ) internal {
         Organisation storage org = orgStorage();
 
         if (msg.sender != org.lectureInstance[_lectureId].mentorOnDuty)
@@ -288,7 +288,7 @@ library LibOrganisation {
         emit Events.topicEditted(_lectureId, oldTopic, _topic);
     }
 
-    function signAttendance(bytes memory _lectureId) external {
+    function signAttendance(bytes memory _lectureId) internal {
         Organisation storage org = orgStorage();
 
         onlyStudents();
@@ -315,7 +315,7 @@ library LibOrganisation {
         emit Events.AttendanceSigned(_lectureId, msg.sender);
     }
 
-    function mentorHandover(address newMentor) external {
+    function mentorHandover(address newMentor) internal {
         Organisation storage org = orgStorage();
 
         if (msg.sender != org.mentorOnDuty && msg.sender != org.moderator)
@@ -324,7 +324,7 @@ library LibOrganisation {
         emit Events.Handover(msg.sender, newMentor);
     }
 
-    function openAttendance(bytes calldata _lectureId) external {
+    function openAttendance(bytes calldata _lectureId) internal {
         Organisation storage org = orgStorage();
 
         onlyMentorOnDuty();
@@ -339,7 +339,7 @@ library LibOrganisation {
         emit Events.attendanceOpened(_lectureId, msg.sender);
     }
 
-    function closeAttendance(bytes calldata _lectureId) external {
+    function closeAttendance(bytes calldata _lectureId) internal {
         Organisation storage org = orgStorage();
 
         onlyMentorOnDuty();
@@ -357,7 +357,7 @@ library LibOrganisation {
     function recordResults(
         uint256 testId,
         string calldata _resultCid
-    ) external {
+    ) internal {
         Organisation storage org = orgStorage();
 
         onlyMentorOnDuty();
@@ -367,7 +367,7 @@ library LibOrganisation {
         emit Events.newResultUpdated(testId, msg.sender);
     }
 
-    function evictStudents(address[] calldata studentsToRevoke) external {
+    function evictStudents(address[] calldata studentsToRevoke) internal {
         Organisation storage org = orgStorage();
 
         onlyModerator();
@@ -385,7 +385,7 @@ library LibOrganisation {
         emit Events.studentsEvicted(studentsToRevoke.length);
     }
 
-    function removeMentor(address[] calldata rouge_mentors) external {
+    function removeMentor(address[] calldata rouge_mentors) internal {
         Organisation storage org = orgStorage();
 
         onlyModerator();
@@ -403,7 +403,7 @@ library LibOrganisation {
 
     function getNameArray(
         address[] calldata _students
-    ) external view returns (string[] memory) {
+    ) internal view returns (string[] memory) {
         Organisation storage org = orgStorage();
 
         string[] memory Names = new string[](_students.length);
@@ -422,7 +422,7 @@ library LibOrganisation {
         return Names;
     }
 
-    function mintCertificate(string memory Uri) external {
+    function mintCertificate(string memory Uri) internal {
         Organisation storage org = orgStorage();
 
         onlyModerator();
@@ -430,24 +430,6 @@ library LibOrganisation {
         INFT(org.certificateContract).batchMintTokens(org.students, Uri);
         org.certificateURI = Uri;
         org.certificateIssued = true;
-    }
-
-    function getStudentAttendanceRatio(
-        address _student
-    ) external view returns (uint attendace, uint TotalClasses) {
-        Organisation storage org = orgStorage();
-        if (org.isStudent[_student] == false) revert Error.not_valid_student();
-        attendace = org.studentsTotalAttendance[_student];
-        TotalClasses = org.LectureIdCollection.length;
-    }
-
-    function listClassesAttended(
-        address _student
-    ) external view returns (bytes[] memory) {
-        Organisation storage org = orgStorage();
-
-        if (org.isStudent[_student] == false) revert Error.not_valid_student();
-        return org.classesAttended[_student];
     }
 
     function orgStorage() internal pure returns (Organisation storage org) {

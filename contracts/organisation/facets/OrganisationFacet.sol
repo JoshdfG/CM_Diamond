@@ -1,20 +1,21 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "../../interfaces/INFT.sol";
+// import "../../interfaces/INFT.sol";
 import "../../interfaces/IFactory.sol";
-import "../../libraries/Events.sol";
+// import "../../libraries/Events.sol";
 import {LibOrganisation} from "../libraries/LibOrganisation.sol";
-import {IOrganisation} from "../interfaces/IOrganisation.sol";
+// import {IOrganisation} from "../interfaces/IOrganisation.sol";
 import "../../libraries/Error.sol";
+import "../../libraries/LibUtils.sol";
 
 contract OrganisationFacet {
     function deploy(
-        string calldata _organization,
-        string calldata _cohort,
+        string memory _organization,
+        string memory _cohort,
         address _moderator,
-        string calldata _adminName,
-        string calldata _uri
+        string memory _adminName,
+        string memory _uri
     ) external {
         LibOrganisation.deploy(
             _organization,
@@ -30,11 +31,25 @@ contract OrganisationFacet {
         address _certificateContract,
         address _spokContract
     ) external {
-        LibOrganisation.initializeContracts(
-            _NftContract,
-            _certificateContract,
-            _spokContract
-        );
+        LibOrganisation.Organisation storage org = LibOrganisation.orgStorage();
+
+        if (msg.sender != org.organisationFactory)
+            revert Error.not_Autorized_Caller();
+        org.NftContract = _NftContract;
+        org.certificateContract = _certificateContract;
+        org.spokContract = _spokContract;
+    }
+
+    function registerStudents(Individual[] calldata _studentList) external {
+        LibOrganisation.registerStudents(_studentList);
+    }
+
+    function registerStaffs(Individual[] calldata staffList) external {
+        LibOrganisation.registerStaffs(staffList);
+    }
+
+    function TransferOwnership(address newModerator) external {
+        LibOrganisation.TransferOwnership(newModerator);
     }
 
     function requestNameCorrection() external {
@@ -57,6 +72,18 @@ contract OrganisationFacet {
         LibOrganisation.createAttendance(_lectureId, _uri, _topic);
     }
 
+    function openAttendance(bytes calldata _lectureId) external {
+        LibOrganisation.openAttendance(_lectureId);
+    }
+
+    function closeAttendance(bytes calldata _lectureId) external {
+        LibOrganisation.closeAttendance(_lectureId);
+    }
+
+    function signAttendance(bytes memory _lectureId) external {
+        LibOrganisation.signAttendance(_lectureId);
+    }
+
     // @dev: Function to mint spok
     function mintMentorsSpok(string memory Uri) external {
         LibOrganisation.mintMentorsSpok(Uri);
@@ -69,20 +96,8 @@ contract OrganisationFacet {
         LibOrganisation.editTopic(_lectureId, _topic);
     }
 
-    function signAttendance(bytes memory _lectureId) external {
-        LibOrganisation.signAttendance(_lectureId);
-    }
-
     function mentorHandover(address newMentor) external {
         LibOrganisation.mentorHandover(newMentor);
-    }
-
-    function openAttendance(bytes calldata _lectureId) external {
-        LibOrganisation.openAttendance(_lectureId);
-    }
-
-    function closeAttendance(bytes calldata _lectureId) external {
-        LibOrganisation.closeAttendance(_lectureId);
     }
 
     function recordResults(
@@ -141,7 +156,10 @@ contract OrganisationFacet {
     function getStudentAttendanceRatio(
         address _student
     ) external view returns (uint attendace, uint TotalClasses) {
-        (attendace, TotalClasses) = LibOrganisation.getStudentAttendanceRatio(_student);
+        LibOrganisation.Organisation storage org = LibOrganisation.orgStorage();
+        if (org.isStudent[_student] == false) revert Error.not_valid_student();
+        attendace = org.studentsTotalAttendance[_student];
+        TotalClasses = org.LectureIdCollection.length;
     }
 
     function getStudentsPresent(
@@ -155,7 +173,10 @@ contract OrganisationFacet {
     function listClassesAttended(
         address _student
     ) external view returns (bytes[] memory) {
-        return LibOrganisation.listClassesAttended(_student);
+        LibOrganisation.Organisation storage org = LibOrganisation.orgStorage();
+
+        if (org.isStudent[_student] == false) revert Error.not_valid_student();
+        return org.classesAttended[_student];
     }
 
     function getLectureIds() external view returns (bytes[] memory) {

@@ -1,17 +1,29 @@
-include .env
-
-verifyDiamond: 
-	forge verify-contract \
-    --chain-id 84532 \
-	--rpc-url ${RPC_URL} \
-    --num-of-optimizations 1000000 \
-    --watch \
-    --constructor-args $(user) $(diamond_cut) \
-    --etherscan-api-key $(ETHERSCAN_API_KEY) \
-    --compiler-version 0.8.0 \
-    $(contract) contracts/Diamond.sol:Diamond
+-include .env
 
 
+
+# verifyDiamond: 
+# 	forge verify-contract \
+#     --chain-id 84532 \
+# 	--rpc-url ${RPC_URL} \
+#     --num-of-optimizations 1000000 \
+#     --watch \
+#     --constructor-args $(user) $(cut) $(address_zero) \
+#     --etherscan-api-key $(ETHERSCAN_API_KEY) \
+#     --compiler-version 0.8.0 \
+#     $(contract) 
+# 	contracts/Diamond.sol:Diamond
+
+deploy:
+	npx hardhat run scripts/deploy.js --network sepolia 
+
+verifyOrganisationFactory:
+	npx hardhat verify --network sepolia --contract contracts/facets/OrganisationFactoryFacet.sol:OrganisationFactoryFacet 0xad443B1F744887806c06cB7FC9C7c8D805d7e884
+
+verifyDiamond:
+	npx hardhat verify --network sepolia --contract contracts/Diamond.sol:Diamond --constructor-args arguments.js 0x7e879d1e400128f05C16BD569fC582cDe57F1459
+
+	
 deployLocal:
 	yarn hardhat run scripts/deploy.js --network anvil
 

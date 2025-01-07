@@ -14,4 +14,6 @@ library Error {
     error not_valid_mentor();
     error not_valid_Moderator();
     error not_valid_lecture_id();
+    error Unauthorized_Operation();
+    error Already_Initialized();
 }
